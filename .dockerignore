@@ -1,0 +1,10 @@
+.editorconfig
+.git
+.gitignore
+.isort.cfg
+k8s
+local.txt
+README.md
+skaffold.yaml
+.venv
+.vscode

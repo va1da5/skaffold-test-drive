@@ -1,0 +1,19 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+profiles:
+  - name: dev
+    activation:
+      - command: dev
+    build:
+      artifacts:
+        - image: django-app
+    deploy:
+      kubectl:
+        manifests:
+          - "./k8s/django-app.yaml"
+
+    portForward:
+      - resourceType: service
+        resourceName: django
+        port: 8000
+        localPort: 8000
